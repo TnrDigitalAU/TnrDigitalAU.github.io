@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>ArupCADDLicenseManager</title>
+<script>
+  var s = location.search;
+  if(s.length > 0){
+    var params = location.search.substring(1).split("&");
+    document.title = (params.find(function(x){return x.split("=")[0]=="toolname"})||"=ArupCADDLicenseManager").split("=")[1]; 
+    history.replaceState({}, "ArupCADDLicenseManager", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
+  }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146066608-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146066608-1');
+</script>
+</head>
+<body>Operating...</body>
+</html>
