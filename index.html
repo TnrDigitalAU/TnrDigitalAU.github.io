@@ -2,7 +2,12 @@
 <head>
 <title>ArupCADDLicenseManager</title>
 <script>
-  document.title = (location.search.substring(1).split("&").find(function(x){return x.split("=")[0]=="toolname"})||"=ArupCADDLicenseManager").split("=")[1];
+  var s = location.search;
+  if(s.Length > 0){
+    var params = location.search.substring(1).split("&");
+    document.title = (params.find(function(x){return x.split("=")[0]=="toolname"})||"=ArupCADDLicenseManager").split("=")[1]; 
+    history.replaceState(stateObj, "page 3", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
+  }
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146066608-1"></script>
