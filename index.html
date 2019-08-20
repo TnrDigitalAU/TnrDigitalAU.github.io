@@ -8,6 +8,7 @@
     document.title = (params.find(function(x){return x.split("=")[0]=="toolname"})||"=ArupCADDLicenseManager").split("=")[1]; 
     history.replaceState({}, "ArupCADDLicenseManager", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
   }
+  setInterval(function(){console.log(gaData[Object.keys(gaData)[0]].hitcount)},300);
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146066608-1"></script>
