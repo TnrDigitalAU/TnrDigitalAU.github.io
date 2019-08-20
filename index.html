@@ -3,10 +3,10 @@
 <title>ArupCADDLicenseManager</title>
 <script>
   var s = location.search;
-  if(s.Length > 0){
+  if(s.length > 0){
     var params = location.search.substring(1).split("&");
     document.title = (params.find(function(x){return x.split("=")[0]=="toolname"})||"=ArupCADDLicenseManager").split("=")[1]; 
-    history.replaceState(stateObj, "page 3", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
+    history.replaceState({}, "ArupCADDLicenseManager", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
   }
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
