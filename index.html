@@ -9,7 +9,7 @@
     history.replaceState({}, "ArupCADDLicenseManager", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
   }
   setInterval(function(){
-    if(gaData && gaData[Object.keys(gaData)[0]].hitcount > 1){
+    if(gaData && gaData[Object.keys(gaData)[0]].hitcount > 0){
         document.title = "Analytics Sent"
     }
     console.log("test");
