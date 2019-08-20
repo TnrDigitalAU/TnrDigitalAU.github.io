@@ -8,9 +8,10 @@
     document.title = (params.find(function(x){return x.split("=")[0]=="toolname"})||"=ArupCADDLicenseManager").split("=")[1]; 
     history.replaceState({}, "ArupCADDLicenseManager", "?" + params.filter(function(x){return x.split("=")[0]!="toolname"}).join("&"));
   }
-  setInterval(function(){
+  var checker = setInterval(function(){
     if(gaData && gaData[Object.keys(gaData)[0]].hitcount > 0){
-        document.title = "Analytics Sent"
+      document.title = "Analytics Sent";
+      clearInterval(checker);
     }
     console.log("test");
   },1000);
